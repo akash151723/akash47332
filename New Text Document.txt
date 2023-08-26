@@ -1,0 +1,44 @@
+def cgpaCalculator():
+	#This is for total credit hours 
+	Totalcredithours = 0
+	#This is for weighted grade
+	weightedgrade = 0
+
+	# Prompt the user to Enter the Number of subjects
+	numberOfSubjects = int(input("Please Enter the number of Subjects you had: "))
+	print ("***********************")
+	# this creates a for loop to collect all subject name
+	for x in range(numberOfSubjects):
+		# This takes in the name of the course 
+		Course1 = input("Enter The Subject code of the course you took: ")
+		# THis takes in the number of unit of the course 
+		unit = int(input ("How many Unit is the Subject you took: "))
+		#This takes in the person score in the course
+		score = int(input("Please Enter your Score: "))
+		print ("***********************")
+
+		#This increament the totalcredithours obtainable based on the unit of the course 
+		Totalcredithours += unit* 1
+
+
+		if (score >= 80):
+			grade = 10
+		elif(score < 80 and  score >= 70):
+			grade = 9
+		elif(score < 70 and  score >= 60 ):
+			grade = 8
+		elif(score < 60 and  score >=40):
+			grade = 6
+		elif (score < 40 and  score>=35):
+			grade = 5
+		else :
+			grade = 0
+
+
+		weightedgrade += unit*grade
+
+	Cgpa =float((weightedgrade / Totalcredithours ))
+	print("Congratulations!! YOUR CGPA IS : " + str(Cgpa))
+
+
+cgpaCalculator()
